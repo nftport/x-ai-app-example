@@ -1,4 +1,4 @@
-import { Layout, Text, Page } from '@vercel/examples-ui'
+import { Text, Page } from '@vercel/examples-ui'
 import { Chat } from '../components/Chat'
 
 function Home() {
@@ -21,7 +21,5 @@ function Home() {
     </Page>
   )
 }
-
-Home.Layout = Layout
 
 export default Home
