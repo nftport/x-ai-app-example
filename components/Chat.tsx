@@ -68,24 +68,10 @@ export function Chat() {
     setMessages(newMessages)
     const last10messages = newMessages.slice(-10)
 
-    const response = await fetch('/api/chat', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        messages: last10messages,
-        user: cookie[COOKIE_NAME],
-      }),
-    })
-    const data = await response.json()
-
-    // strip out white spaces from the bot message
-    const botNewMessage = data.text.trim()
-
+    // Instead of calling the API, always return 'lol'
     setMessages([
       ...newMessages,
-      { message: botNewMessage, who: 'bot' } as Message,
+      { message: 'lol', who: 'bot' } as Message,
     ])
     setLoading(false)
   }
